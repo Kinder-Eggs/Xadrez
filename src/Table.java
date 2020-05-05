@@ -20,12 +20,12 @@ public class Table {
             }
             System.out.println();
          }
-        System.out.print("  a b c d e f g h");
+        System.out.println("  a b c d e f g h");
     }
 
 
-    public void removePiece() {
-            ;
+    public void removePiece(int pos) {
+        pieces[pos] = null;
     }
 
 
