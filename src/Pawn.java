@@ -15,11 +15,13 @@ public class Pawn extends Piece {
                 }
             } else if(index + 7 == npos || index + 9 == npos) {
                 if(table.pieces[npos] != null) {
-                    table.removePiece(npos);
-                    table.pieces[npos] = table.pieces[index];
-                    table.pieces[index] = null;
-                    this.index = npos;
-                    return;
+                    if(!table.pieces[npos].team){
+                        table.removePiece(npos);
+                        table.pieces[npos] = table.pieces[index];
+                        table.pieces[index] = null;
+                        this.index = npos;
+                        return;
+                    }
                 }
             }
         } else {
@@ -32,11 +34,13 @@ public class Pawn extends Piece {
                 }
             } else if(index -7 == npos || index - 9 == npos) {
                 if(table.pieces[npos] != null) {
-                    table.removePiece(npos);
-                    table.pieces[npos] = table.pieces[index];
-                    table.pieces[index] = null;
-                    this.index = npos;
-                    return;
+                    if(table.pieces[npos].team){
+                        table.removePiece(npos);
+                        table.pieces[npos] = table.pieces[index];
+                        table.pieces[index] = null;
+                        this.index = npos;
+                        return;
+                    }
                 }
             }
         }

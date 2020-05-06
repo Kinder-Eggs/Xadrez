@@ -22,7 +22,9 @@ public class Bishop extends Piece {
                 }
             }
             if (table.pieces[npos] != null) {
-                table.removePiece(npos);
+                if (table.pieces[npos].team != team) {
+                    table.removePiece(npos);
+                }
             }
             table.pieces[npos] = table.pieces[index];
             table.pieces[index] = null;
@@ -46,7 +48,9 @@ public class Bishop extends Piece {
                 }
             }
             if (table.pieces[npos] != null) {
-                table.removePiece(npos);
+                if (table.pieces[npos].team != team) {
+                    table.removePiece(npos);
+                }
             }
             table.pieces[npos] = table.pieces[index];
             table.pieces[index] = null;
