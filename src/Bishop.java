@@ -24,6 +24,9 @@ public class Bishop extends Piece {
             if (table.pieces[npos] != null) {
                 if (table.pieces[npos].team != team) {
                     table.removePiece(npos);
+                } else {
+                    System.out.println("MOVEMENT WITH BISHOP NOT ALLOWED!!!");
+                    return;
                 }
             }
             table.pieces[npos] = table.pieces[index];
@@ -50,6 +53,9 @@ public class Bishop extends Piece {
             if (table.pieces[npos] != null) {
                 if (table.pieces[npos].team != team) {
                     table.removePiece(npos);
+                } else {
+                    System.out.println("MOVEMENT WITH BISHOP NOT ALLOWED!!!");
+                    return;
                 }
             }
             table.pieces[npos] = table.pieces[index];
