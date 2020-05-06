@@ -29,6 +29,11 @@ public class Table {
     }
 
 
+    public void movePiece(int pos, int npos) {
+        this.pieces[npos] = this.pieces[pos];
+        this.pieces[pos] = null;
+    }
+
     public void setupTable() {  // Starts the board on the usual chess configuration
         pieces[0] = new Tower(true, 0);
         pieces[1] = new Horse(true, 1);

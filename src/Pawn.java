@@ -8,8 +8,7 @@ public class Pawn extends Piece {
         if(team) {  // Black piece
             if(index + 8 == npos || index + 16 == npos) {  // Moving forward
                 if(table.pieces[npos] == null) {
-                    table.pieces[npos] = table.pieces[index];
-                    table.pieces[index] = null;
+                    table.movePiece(index, npos);
                     this.index = npos;
                     return;
                 }
@@ -17,8 +16,7 @@ public class Pawn extends Piece {
                 if(table.pieces[npos] != null) {
                     if(!table.pieces[npos].team){
                         table.removePiece(npos);
-                        table.pieces[npos] = table.pieces[index];
-                        table.pieces[index] = null;
+                        table.movePiece(index, npos);
                         this.index = npos;
                         return;
                     }
@@ -27,8 +25,7 @@ public class Pawn extends Piece {
         } else {  // White piece
             if(index - 8 == npos || index - 16 == npos) {  // Moving forward
                 if(table.pieces[npos] == null) {
-                    table.pieces[npos] = table.pieces[index];
-                    table.pieces[index] = null;
+                    table.movePiece(index, npos);
                     this.index = npos;
                     return;
                 }
@@ -36,8 +33,7 @@ public class Pawn extends Piece {
                 if(table.pieces[npos] != null) {
                     if(table.pieces[npos].team){
                         table.removePiece(npos);
-                        table.pieces[npos] = table.pieces[index];
-                        table.pieces[index] = null;
+                        table.movePiece(index, npos);
                         this.index = npos;
                         return;
                     }

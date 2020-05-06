@@ -30,8 +30,7 @@ public class Tower extends Piece {
                     return;
                 }
             }
-            table.pieces[npos] = table.pieces[index];
-            table.pieces[index] = null;
+            table.movePiece(index, npos);
             this.index = npos;
             return;
         }else if((npos - index) % 8 == 0) {  // Vertical movement
@@ -60,8 +59,7 @@ public class Tower extends Piece {
                     return;
                 }
             }
-            table.pieces[npos] = table.pieces[index];
-            table.pieces[index] = null;
+            table.movePiece(index, npos);
             this.index = npos;
             return;
         }

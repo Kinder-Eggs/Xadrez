@@ -29,8 +29,7 @@ public class Bishop extends Piece {
                     return;
                 }
             }
-            table.pieces[npos] = table.pieces[index];
-            table.pieces[index] = null;
+            table.movePiece(index, npos);
             this.index = npos;
             return;
         }
@@ -58,8 +57,7 @@ public class Bishop extends Piece {
                     return;
                 }
             }
-            table.pieces[npos] = table.pieces[index];
-            table.pieces[index] = null;
+            table.movePiece(index, npos);
             this.index = npos;
             return;
         }

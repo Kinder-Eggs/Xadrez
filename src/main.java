@@ -8,7 +8,7 @@ public class main {
         table.printTable();
         for (int i = 0; i < commands.length; i++){  // Game loop
             if (commands[i].getCommand().length() == 1) {  // Promotion Routine
-                // Promotion Routine
+
             } else {  // Movement routine
                 table.pieces[csvToPos(commands[i].getCommand().substring(0,2))].move(csvToPos(commands[i].getCommand().substring(3,5)), table);
                 System.out.println("Source: " + commands[i].getCommand().substring(0,2));
