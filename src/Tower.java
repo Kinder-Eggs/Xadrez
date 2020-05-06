@@ -65,5 +65,6 @@ public class Tower extends Piece {
             this.index = npos;
             return;
         }
+        System.out.println("MOVEMENT WITH TOWER NOT ALLOWED!!!");
     }
 }
