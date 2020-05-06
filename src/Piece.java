@@ -1,4 +1,4 @@
-public class Piece {
+public class Piece {  // Base class for pieces
     public boolean team; // True = Black, False = White
     public int index;
 

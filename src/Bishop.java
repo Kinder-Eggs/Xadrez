@@ -4,10 +4,10 @@ public class Bishop extends Piece {
         super(team, pos);
     }
 
-    public void move(int npos, Table table) {
-        if((index - npos) % 7 == 0) {
+    public void move(int npos, Table table) {  // Movement routine for bishops
+        if((index - npos) % 7 == 0) {  // Moving in one diagonal
             if(index > npos) {
-                for (int i = index-7; i != npos; i -= 7) {
+                for (int i = index-7; i != npos; i -= 7) {  // Verifying pieces in the way
                     if(table.pieces[i] != null) {
                         System.out.println("MOVEMENT WITH BISHOP NOT ALLOWED!!!");
                         return;
@@ -31,7 +31,7 @@ public class Bishop extends Piece {
             this.index = npos;
             return;
         }
-        if ((index - npos) % 9 == 0) {
+        if ((index - npos) % 9 == 0) {  // Moving in the other diagonal
             if(index > npos) {
                 for (int i = index-9; i != npos; i -= 9) {
                     if(table.pieces[i] != null) {

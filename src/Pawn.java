@@ -4,16 +4,16 @@ public class Pawn extends Piece {
         super(team, pos);
     }
 
-    public void move(int npos, Table table) {
-        if(team) {
-            if(index + 8 == npos || index + 16 == npos) {
+    public void move(int npos, Table table) {  // Movement routine for pawns
+        if(team) {  // Black piece
+            if(index + 8 == npos || index + 16 == npos) {  // Moving forward
                 if(table.pieces[npos] == null) {
                     table.pieces[npos] = table.pieces[index];
                     table.pieces[index] = null;
                     this.index = npos;
                     return;
                 }
-            } else if(index + 7 == npos || index + 9 == npos) {
+            } else if(index + 7 == npos || index + 9 == npos) {  // Eating in diagonal
                 if(table.pieces[npos] != null) {
                     if(!table.pieces[npos].team){
                         table.removePiece(npos);
@@ -24,15 +24,15 @@ public class Pawn extends Piece {
                     }
                 }
             }
-        } else {
-            if(index - 8 == npos || index - 16 == npos) {
+        } else {  // White piece
+            if(index - 8 == npos || index - 16 == npos) {  // Moving forward
                 if(table.pieces[npos] == null) {
                     table.pieces[npos] = table.pieces[index];
                     table.pieces[index] = null;
                     this.index = npos;
                     return;
                 }
-            } else if(index -7 == npos || index - 9 == npos) {
+            } else if(index -7 == npos || index - 9 == npos) {  // Eating in diagonal
                 if(table.pieces[npos] != null) {
                     if(table.pieces[npos].team){
                         table.removePiece(npos);

@@ -6,7 +6,7 @@ public class Table {
     }
 
 
-    public void printTable() {
+    public void printTable() {  // Print current state of the board
         for(int j = 0; j < 8; j ++) {
             System.out.print(8-j + " ");
             for (int i = j*8; i < (j+1)*8; i++) {
@@ -24,12 +24,12 @@ public class Table {
     }
 
 
-    public void removePiece(int pos) {
+    public void removePiece(int pos) {  // Removes a piece from the board
         pieces[pos] = null;
     }
 
 
-    public void setupTable() {
+    public void setupTable() {  // Starts the board on the usual chess configuration
         pieces[0] = new Tower(true, 0);
         pieces[1] = new Horse(true, 1);
         pieces[2] = new Bishop(true, 2);
