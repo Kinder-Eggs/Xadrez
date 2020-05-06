@@ -8,7 +8,9 @@ public class main {
         table.printTable();
         for (int i = 0; i < commands.length; i++){  // Game loop
             if (commands[i].getCommand().length() == 1) {  // Promotion Routine
-
+                table.promotePiece(csvToPos(commands[i-1].getCommand().substring(3,5)), commands[i].getCommand().charAt(0));
+                System.out.println("Promoted at: " + commands[i-1].getCommand().substring(3,5));
+                System.out.println("Promoted to: " + commands[i].getCommand());
             } else {  // Movement routine
                 table.pieces[csvToPos(commands[i].getCommand().substring(0,2))].move(csvToPos(commands[i].getCommand().substring(3,5)), table);
                 System.out.println("Source: " + commands[i].getCommand().substring(0,2));

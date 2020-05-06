@@ -34,6 +34,21 @@ public class Table {
         this.pieces[pos] = null;
     }
 
+
+    public void promotePiece(int pos, char prom) {
+        if(Character.compare(prom, 't') == 0) {
+            this.pieces[pos] = new Tower(this.pieces[pos].team, pos);
+        } else if(Character.compare(prom, 'h') == 0) {
+            this.pieces[pos] = new Horse(this.pieces[pos].team, pos);
+        } else if(Character.compare(prom, 'b') == 0) {
+            this.pieces[pos] = new Bishop(this.pieces[pos].team, pos);
+        } else if(Character.compare(prom, 'q') == 0) {
+            this.pieces[pos] = new Queen(this.pieces[pos].team, pos);
+        } else {
+            System.out.println("UNKNOWN PIECE PROMOTION!!!");
+        }
+    }
+
     public void setupTable() {  // Starts the board on the usual chess configuration
         pieces[0] = new Tower(true, 0);
         pieces[1] = new Horse(true, 1);
